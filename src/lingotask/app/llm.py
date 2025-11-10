@@ -47,13 +47,7 @@ async def call_llm(prompt: str, input_text: str) -> dict:
                 raise LLMError(f"DeepSeek error {r.status_code}: {r.text}", code='LLM_UPSTREAM_ERROR')
 
             content = r.json()['choices'][0]['message']['content']
-            try:
-                return _extract_json(content)
-            except LLMError:
-                payload['messages'][-1]['content'] = input_text + '\n\nRespond JSON only. No commentary.'
-                r = await _post_json(url, headers, payload)
-                content = r.json()['choices'][0]['message']['content']
-                return _extract_json(content)
+            return _extract_json(content)
 
         except (LLMError, ConfigError) as e:
             last_err = e
