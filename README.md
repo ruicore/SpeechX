@@ -13,12 +13,13 @@ This project is **Module 1 only** (no audio/video code).
 ---
 
 ## Deliverables
-1.Translation Prompt: variable `PROMPTS` in file `src/lingotask/prompts.py` 
-2.Core Code: files under `src/`
-3.Test Code: files under `src/tests/`, test case use `pytest` and were used to test basic functionality instead of LLM.
-4.Test Data & Word samples: [sample.txt](src/lingotask/sample.txt) and file [translation_20251110_212357.docx](src/lingotask/downloads/translation_20251110_212357.docx)
+1. Translation Prompt: variable `PROMPTS` in file `src/lingotask/prompts.py` 
+2. Core Code: files under `src/`
+3. Test Code: files under `src/tests/`, test case use `pytest` and were used to test basic functionality instead of LLM.
+4. Test Data & Word samples: [sample.txt](src/lingotask/sample.txt) and file [translation_20251110_212357.docx](src/lingotask/downloads/translation_20251110_212357.docx)
 5. Screenshots: ![Operation Screenshots.png](src/lingotask/Operation%20Screenshots.png)
 6. AI Conversation Records: https://chatgpt.com/share/69120869-7d28-8000-bbe4-58044c60ddc0
+
 ```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
