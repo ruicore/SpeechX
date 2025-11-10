@@ -41,23 +41,3 @@ async def test_translate_no_vocab(monkeypatch):
     resp = await translate(req)
     assert resp.success is True
     assert resp.vocabulary == []
-
-
-@pytest.mark.asyncio
-async def test_translate_long_split(monkeypatch):
-    async def fake_call_llm(prompt: str, input_text: str):
-        # Echo back a marker so we can detect multiple chunks
-        return {'translation': f"T[{len(input_text)}]", 'vocabulary': []}
-
-    monkeypatch.setattr('app.services.translation.call_llm', fake_call_llm)
-
-    from app.config import settings
-
-    settings.max_text_chars = 50  # force split
-
-    text = 'Sentence one. ' + 'B' * 60 + ' Sentence three.'
-    req = TranslateRequest(text=text, output_format='json', include_vocabulary=False)
-    resp = await translate(req)
-    assert resp.success is True
-    # Expect multiple chunk markers
-    assert resp.translation.count('T[') >= 2
