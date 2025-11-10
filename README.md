@@ -6,7 +6,7 @@ FastAPI implementation of the **required** module:
 - Professional vocabulary extraction
 - Optional Word (docx) export
 - Full OpenAPI docs at `/docs`
-- Tests (`pytest`) 
+- Tests (`pytest`) at `src/tests/`
 
 This project is **Module 1 only** (no audio/video code).
 
