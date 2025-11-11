@@ -5,7 +5,7 @@ FastAPI implementation of the **required** module:
 - English → Chinese translation
 - Professional vocabulary extraction
 - Optional Word (docx) export
-- Full OpenAPI docs at `/docs`
+- Full docs at `/docs`
 - Tests (`pytest`) at `src/tests/`
 
 This project is **Module 1 only** (no audio/video code).
